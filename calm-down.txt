@@ -1,4 +1,3 @@
-```css
 :root {
     --c-primary-shade: var(--green-0);
     --bg-primary: white;
@@ -456,7 +455,4 @@
     body.dark .dialog .CodeMirror {
         color: var(--grey-2);
     }
-
-```
-
 

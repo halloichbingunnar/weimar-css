@@ -1,0 +1,478 @@
+/* define your body, title and monospace font here*/
+:root {
+    --body-font: 'IBM Plex Sans', sans-serif;
+    --title-font: 'IBM Plex Mono', monospace;
+    --mono-font: 'IBM Plex Mono', monospace;
+   }
+
+/* adapt Berlin colors */
+:root {
+    --green-0: #038387;
+    --green-1: #027175;
+    --green-2: #025659;
+}
+
+/* using GitHub Primer greyscale */
+:root {
+    --bg-primary: white;
+    --bg-directories: white;
+    --grey-3: #8b949e;
+    --grey-4: #6e7681;
+    --grey-5: #484f58;
+    --grey-6: #30363d;
+    --grey-7: #21262d;
+    --grey-8: #161b22;
+    --black: #0d1117;
+    --text-white: #f8f8f8;
+}
+
+/*Menubar*/
+    #menubar {
+       color: var(--grey-4); 
+    }
+
+    body.dark #menubar {
+        color: var(--grey-2);
+        background-color: var(--black);
+        /* margin-bottom: -1px; */
+        /* border-bottom: 1px solid black; */
+    }
+
+    body.dark #menubar span.top-level-item:hover {
+        background-color: var(--grey-6);
+    }
+
+    body .window-controls .minimise:hover, body .window-controls .resize:hover {
+        background-color: var(--grey-7);
+    }
+
+
+/*Menu*/
+    body.dark div#application-menu {
+        border: 1px solid var(--grey-6);
+        background-color: var(--grey-7);
+        color: var(--grey-2);
+    }
+
+    body.dark div#application-menu div.menu-item:not(.separator):not(.disabled):hover {
+        background-color: var(--grey-6);
+    }
+
+
+/*Scrollbar*/
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    body ::-webkit-scrollbar-thumb {
+        background-color: var(--grey-1) !important;
+    }
+
+    body.dark ::-webkit-scrollbar-thumb {
+        background-color: var(--grey-5) !important;
+    }
+
+/*Toolbar*/
+    body #toolbar{
+            background-color: #ffffff;
+        }
+
+    #toolbar .button clr-icon {
+        width: 15px;
+    }
+
+    body.dark #toolbar {
+        color: var(--grey-3);
+        background-color: var(--black);
+    }
+
+    body.dark #toolbar .searchbar input {
+        color: inherit;
+        background-color: var(--black);
+        border: transparent;
+    }
+
+
+/*Menu*/
+    body .cb-toggle input:checked + .toggle {
+        background-color: var(--green-0);
+    }
+
+    body .radio-toggle input:checked + .toggle:before {
+    background-color: var(--green-0);
+    }
+
+    body .modal .dialog .tab-list .tab-list-tab.tab-list-tab-active {
+        background-color: var(--c-primary);
+        color: var(--black);
+    }
+
+    body .modal .dialog button:hover, body .modal .dialog a.button:hover, body .modal .dialog button:focus, body .modal .dialog a.button:focus {
+        background-color: var(--green-0);
+        color: var(--text-white);
+    }
+
+    body.dark .modal .dialog {
+        background-color: var(--grey-8);
+        color: var(--text-white);
+    }
+
+
+/*Document tabs*/
+    #document-tabs{
+        font-size: 12px;
+    }
+
+    body.dark #document-tabs {
+        border-bottom: 1px solid var(--grey-7);
+        color: var(--grey-2);
+        background-color: var(--grey-8);
+    }
+
+    #document-tabs .document:hover{
+        background-color: var(--grey-2) !important;
+    }
+
+    body.dark #document-tabs .document:hover{
+        background-color: var(--grey-7) !important;
+    }
+
+    body #document-tabs .document.active {
+        background-color: var(--grey-1);
+        color: var(--grey-21);
+    }
+
+    body.dark #document-tabs .document.active {
+        background-color: var(--grey-7);
+    }
+
+    #document-tabs .document.active:hover{
+        background-color: var(--grey-3);
+    }
+
+    body.dark #document-tabs .document.active:hover{
+        background-color: var(--grey-6);
+    }
+
+    #document-tabs .document .close {
+        right: 5px;
+        width: 15px;
+    }
+
+
+/*File list*/
+    body #file-list {
+        color: var(--grey-3);
+        background-color: transparent;
+    }
+
+    body.dark #file-list {
+        background-color: var(--grey-8);
+        color: var(--grey-3);
+        box-shadow: inset -14px 2px 54px -23px rgba(0, 0, 0, 0.75);
+    }
+
+    body #file-list div.list-item {
+        border-bottom: 1px solid var(--grey-0);
+        border-left: 5px solid transparent;
+    }
+
+    body.dark #file-list div.list-item {
+        border-bottom: 1px solid var(--grey-7);
+        border-left: 5px solid transparent;
+    }
+
+    body #file-list div.list-item.selected {
+        background-color: transparent;
+        border-left: 5px solid var(--green-0);
+    }
+
+    body.dark #file-list div.container div.list-item.selected, 
+    body.dark #file-list div.container div.list-item.active {
+        background-color: transparent;
+    }
+
+    body #file-list div.list-item.directory {
+        background-color: var(--grey-0);
+        color: var(--grey-3);
+    }
+
+    body.dark #file-list div.container div.list-item.directory {
+        background-color: var(--grey-7);
+        color: var(--grey-3);
+    }
+
+    body #file-list div.list-item.file:hover, 
+    body #file-list div.list-item.code:hover,
+    body #file-list div.list-item.directory:hover {
+        background-color: var(--grey-1) !important;
+    }
+
+    body.dark #file-list div.list-item.file:hover, 
+    body.dark #file-list div.list-item.code:hover,
+    body.dark #file-list div.list-item.directory:hover {
+        background-color: var(--grey-6) !important;
+        color: var(--grey-3)
+    }
+
+    body.dark #file-list div.container div.list-item div.meta .id, body.dark #file-list div.container div.list-item div.meta .tags, body.dark #file-list div.container div.list-item div.meta .directories, body.dark #file-list div.container div.list-item div.meta .files, body.dark #file-list div.container div.list-item div.meta .code-indicator {
+        background-color: var(--grey-6);
+        color: var(--grey-0);
+    }
+
+/*Filter*/
+    #file-list #file-manager-filter {
+        border-bottom: 1px solid var(--grey-2);
+        height: 25px;
+        padding-left: 6px;
+        background-color: var(--bg-primary);
+        padding: 0px;
+        position: sticky;
+    }
+
+    body.dark #file-list #file-manager-filter #file-manager-filter-input {
+        color: var(--grey-1);
+        background-color: var(--black);
+    }
+
+    body #file-list #file-manager-filter #file-manager-filter-input {
+        font-family: inherit;
+        transition: 0.5s all ease-in-out;
+    }
+
+
+/*File tree*/
+
+    body #file-tree {
+        background-color: transparent;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        color: var(--grey-3);
+        font-size: 0.9em;
+        box-shadow: inset -14px 2px 54px -23px rgba(0, 0, 0, 0.25);
+    }
+
+    body.dark #file-tree {
+        background-color: var(--grey-8);
+        color: var(--grey-3);
+        box-shadow: inset -14px 2px 54px -23px rgba(0, 0, 0, 0.25);
+    }
+
+
+    #file-tree #directories-dirs-header, 
+    #file-tree #directories-files-header {
+        height: 26px;
+        position: sticky;
+        vertical-align: bottom;
+    }
+
+    body.dark #file-tree #directories-dirs-header, 
+    body.dark #file-tree #directories-files-header {
+        border-bottom-color: var(--grey-7);
+        background-color: var(--black);
+        color: var(--grey-4);
+    }
+
+
+    body #file-tree #directories-dirs-header, 
+    body #file-tree #directories-files-header {
+        border-bottom: 1px solid var(--grey-1);
+        color: var(--grey-3);
+        background-color: var(--bg-primary);
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    #file-tree #directories-dirs-header clr-icon, 
+    #file-tree #directories-files-header clr-icon {
+        width: 12px;
+        height: 12px;
+        margin-left: 8px;
+        margin-right: 8px;
+        vertical-align: text-bottom;
+    }
+
+    body.dark #file-tree div.list-item:hover {
+        color: var(--grey-3);
+        background-color: var(--grey-7);
+    }
+
+
+/*CodeMirror*/
+    #editor .CodeMirror {
+        height: calc(100% - 25px);
+        margin-top: 25px;
+        cursor: text;
+        font-family: inherit;
+    }
+
+    .CodeMirror .CodeMirror-sizer {
+        height: 100%;
+        margin-right: 18%;
+        max-width: 700px
+    }
+
+    body.dark #editor {
+        background-color: var(--grey-7);
+    }
+
+/*Sidebar*/
+    #sidebar {
+        width: 15%;
+    }
+
+    #sidebar.open {
+        right: 1%;
+    }
+
+    body.show-menubar #sidebar {
+        top: 95px;
+    }
+
+    body #sidebar {
+        background-color: transparent;
+    }
+
+    body.dark #sidebar {
+        background-color: transparent;
+        color: var(--grey-3);
+    }
+
+    body #sidebar #sidebar-tabs .sidebar-tab.active {
+        background-color: var(--grey-1);
+        color: var(--black);
+    }
+
+    body.dark #sidebar #sidebar-tabs .sidebar-tab.active {
+        background-color: var(--grey-7);
+        color: var(--grey-3);
+    }
+
+    body #sidebar #sidebar-tabs .sidebar-tab:hover {
+        background-color: var(--grey-2);
+        color: var(--black);
+    }
+
+    body.dark #sidebar #sidebar-tabs .sidebar-tab:hover {
+        background-color: var(--grey-6);
+    }
+
+/*Sidebar Text*/
+    #sidebar h1 {
+        padding: 10px;
+        padding-left: 18px;
+        font-size: 0.9em;
+    }
+
+    #sidebar p {
+        padding: 10px;
+        padding-left: 18px;
+        font-size: 0.8em;
+    }
+
+/*Sidebar Attachments*/
+    #sidebar a.attachment {
+        display: block;
+        margin: 10px;
+        font-size: 0.8em;
+        text-decoration: none;
+        color: inherit;
+        text-indent: -32px;
+        padding-left: 38px;
+    }
+
+    #sidebar a.attachment svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+        vertical-align: text-bottom;
+        margin-bottom: -2px;
+        fill: currentColor;
+    }
+
+    body.dark #sidebar #open-dir-external {
+        fill: var(--grey-3);
+        transition: 0.2s background-color ease;
+    }
+
+/*Sidebar Literature*/
+
+    #sidebar div.csl-bib-body div.csl-entry {
+        display: list-item;
+        list-style-type: none;
+        margin: 1em 0.2em 1em 18px;
+        font-size: 80%;
+        user-select: text;
+        cursor: text;
+    }
+
+    body.dark #sidebar .csl-bib-body a {
+        color: var(--grey-3);
+        font-weight: normal;
+    }
+
+/*Sidebar Content*/
+
+    body #sidebar div.toc-entry-container div.toc-level {
+        padding: 0px 10px;
+        font-weight: normal;
+        font-size: 0.9em;
+        color: var(--c-primary);
+    }
+
+    body #sidebar div.toc-entry-container div.toc-entry {
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+
+
+/* --- Fonts --- */
+body #editor .CodeMirror, body #editor .modal .dialog .code, body #editor .CodeMirror .cm-comment, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-formatting-task, body #editor .CodeMirror .cm-formatting-code-block, body #editor .CodeMirror .cm-formatting-list-ol, body #editor .CodeMirror .cm-formatting-list-ul, body #editor .popup .search input.regexp {
+    font-family: var(--body-font);
+}
+.cm-header {
+    font-family: var(--title-font);
+}
+.CodeMirror, body #editor .CodeMirror .cm-fenced-code {
+    font-family: var(--mono-font);
+}
+/* font-size of headings */
+.CodeMirror .size-header-3 {
+    font-size: 1.25em;
+}
+.CodeMirror .size-header-4 {
+    font-size: 1.25em;
+}
+.CodeMirror .size-header-5 {
+    font-size: 1.1em;
+}
+.cm-header.cm-header-4, .cm-header.cm-header-5, .cm-header.cm-header-6 {
+    font-weight: normal;
+}
+
+/* make heading hashtags (## h2) smaller */
+.cm-formatting-header {
+    font-size: small;
+    font-family: var(--body-font);
+}
+/* limit the text column width to a maximum */
+.CodeMirror-sizer {
+    max-width: 800px;
+}
+
+/* disable color of emphasis/strong */
+body #editor .CodeMirror .cm-em, body #editor .CodeMirror .cm-strong, body.dark #editor .CodeMirror .cm-em, body.dark #editor .CodeMirror .cm-strong{
+    color: inherit;
+}
+
+/*Dark mode*/
+body.dark #editor .CodeMirror .code-block-line, 
+body.dark .quicklook .body .CodeMirror .code-block-line, 
+body.dark .dialog .CodeMirror .code-block-line {
+    background-color: var(--grey-7);
+}
+
+body.dark #editor .CodeMirror, 
+body.dark .quicklook .body .CodeMirror, 
+body.dark .dialog .CodeMirror {
+    color: var(--grey-2);
+}

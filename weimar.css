@@ -42,15 +42,15 @@
         background-color: var(--grey-6);
     }
 
-    body .window-controls .minimise:hover, body .window-controls .resize:hover {
+    body.dark .window-controls .minimise:hover, body .window-controls .resize:hover {
         background-color: var(--grey-7);
     }
 
 
 /*Menu*/
     body.dark div#application-menu {
-        border: 1px solid var(--grey-6);
-        background-color: var(--grey-7);
+        border: 1px solid var(--grey-5);
+        background-color: var(--grey-6);
         color: var(--grey-2);
     }
 
@@ -73,10 +73,6 @@
     }
 
 /*Toolbar*/
-    body #toolbar{
-            background-color: #ffffff;
-        }
-
     #toolbar .button clr-icon {
         width: 15px;
     }
@@ -118,40 +114,31 @@
     }
 
 
-/*Document tabs*/
+/* Document tabs */
     #document-tabs{
         font-size: 12px;
     }
 
-    body.dark #document-tabs {
-        border-bottom: 1px solid var(--grey-7);
-        color: var(--grey-2);
-        background-color: var(--grey-8);
+    body #document-tabs {
+        border-bottom: 0px;
+        border-top: 1px solid var(--grey-2);
+    }
+
+    body #document-tabs .document {
+        background-color: var(--grey-0);
     }
 
     #document-tabs .document:hover{
         background-color: var(--grey-2) !important;
     }
 
-    body.dark #document-tabs .document:hover{
-        background-color: var(--grey-7) !important;
-    }
-
     body #document-tabs .document.active {
-        background-color: var(--grey-1);
+        background-color: var(--bg-primary);
         color: var(--grey-21);
-    }
-
-    body.dark #document-tabs .document.active {
-        background-color: var(--grey-7);
     }
 
     #document-tabs .document.active:hover{
         background-color: var(--grey-3);
-    }
-
-    body.dark #document-tabs .document.active:hover{
-        background-color: var(--grey-6);
     }
 
     #document-tabs .document .close {
@@ -159,8 +146,37 @@
         width: 15px;
     }
 
+    /* dark */
+    body.dark #document-tabs {
+        border-bottom: 1px solid var(--grey-7);
+        color: var(--grey-2);
+        background-color: var(--grey-8);
+        border-top: 0px;
+    }
+
+    body.dark #document-tabs .document {
+        background-color: var(--grey-8);
+    }
+
+    body.dark #document-tabs .document:hover{
+        background-color: var(--grey-7) !important;
+    }
+
+    body.dark #document-tabs .document.active {
+        background-color: var(--grey-7);
+    }
+
+    body.dark #document-tabs .document.active:hover{
+        background-color: var(--grey-6);
+    }
+
 
 /*File list*/
+    /* distinguish directory from files */
+    body #file-list div.list-item.directory {
+        font-weight: bold;
+    }
+
     body #file-list {
         color: var(--grey-3);
         background-color: transparent;
@@ -183,7 +199,7 @@
     }
 
     body #file-list div.list-item.selected {
-        background-color: transparent;
+        background-color: var(--bg-primary);
         border-left: 5px solid var(--green-0);
     }
 
@@ -240,6 +256,9 @@
         transition: 0.5s all ease-in-out;
     }
 
+    #file-manager #file-manager-resize, #file-manager #file-manager-inner-resizer {
+        background-color: var(--grey-0);
+    }
 
 /*File tree*/
 
@@ -432,7 +451,7 @@ body #editor .CodeMirror, body #editor .modal .dialog .code, body #editor .CodeM
 .cm-header {
     font-family: var(--title-font);
 }
-.CodeMirror, body #editor .CodeMirror .cm-fenced-code {
+.CodeMirror, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-comment {
     font-family: var(--mono-font);
 }
 /* font-size of headings */
@@ -452,8 +471,16 @@ body #editor .CodeMirror, body #editor .modal .dialog .code, body #editor .CodeM
 /* make heading hashtags (## h2) smaller */
 .cm-formatting-header {
     font-size: small;
-    font-family: var(--body-font);
+    font-family: var(--body-font);    
 }
+
+/* make ** and _ markup less disruptive */
+.CodeMirror .cm-formatting-strong, .CodeMirror .cm-formatting-em, span.cm-formatting.cm-formatting-code.cm-comment.cm-variable-2 {
+    opacity: 0.5;
+    font-weight: normal;
+    letter-spacing: -0.2em;
+}
+
 /* limit the text column width to a maximum */
 .CodeMirror-sizer {
     max-width: 800px;
@@ -475,4 +502,13 @@ body.dark #editor .CodeMirror,
 body.dark .quicklook .body .CodeMirror, 
 body.dark .dialog .CodeMirror {
     color: var(--grey-2);
+}
+
+body.dark #file-list div.container div.list-item div.meta .id, 
+body.dark #file-list div.container div.list-item div.meta .tags, 
+body.dark #file-list div.container div.list-item div.meta .directories, 
+body.dark #file-list div.container div.list-item div.meta .files, 
+body.dark #file-list div.container div.list-item div.meta .code-indicator {
+    background-color: var(--grey-6);
+    color: var(--grey-3);
 }

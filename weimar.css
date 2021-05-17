@@ -72,7 +72,7 @@
     }
 
     body ::-webkit-scrollbar-thumb {
-        background-color: var(--grey-1) !important;
+        background-color: var(--grey-2) !important;
     }
 
     body.dark ::-webkit-scrollbar-thumb {
@@ -323,12 +323,21 @@
         box-shadow: inset -14px 2px 54px -23px rgba(0, 0, 0, 0.25);
     }
 
+
     #file-tree #directories-dirs-header,
     #file-tree #directories-files-header {
         height: 26px;
         position: sticky;
         vertical-align: bottom;
     }
+
+    body.dark #file-tree #directories-dirs-header,
+    body.dark #file-tree #directories-files-header {
+        border-bottom-color: var(--grey-7);
+        background-color: var(--black);
+        color: var(--grey-4);
+    }
+
 
     body #file-tree #directories-dirs-header,
     body #file-tree #directories-files-header {
@@ -337,13 +346,6 @@
         background-color: var(--bg-primary);
         font-size: 12px;
         line-height: 25px;
-    }
-
-    body.dark #file-tree #directories-dirs-header,
-    body.dark #file-tree #directories-files-header {
-        border-bottom-color: var(--grey-6);
-        background-color: var(--black);
-        color: var(--grey-4);
     }
 
     #file-tree #directories-dirs-header clr-icon,
@@ -508,14 +510,23 @@
 
 
 /* --- Fonts --- */
-
-    body #editor .CodeMirror, body #editor .modal .dialog .code, body #editor .CodeMirror .cm-comment, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-formatting-task, body #editor .CodeMirror .cm-formatting-code-block, body #editor .CodeMirror .cm-formatting-list-ol, body #editor .CodeMirror .cm-formatting-list-ul, body #editor .popup .search input.regexp {
+    body #editor .CodeMirror,
+    body #editor .modal .dialog .code,
+    body #editor .CodeMirror .cm-comment,
+    body #editor .CodeMirror .cm-fenced-code,
+    body #editor .CodeMirror .cm-formatting-task,
+    body #editor .CodeMirror .cm-formatting-code-block,
+    body #editor .CodeMirror .cm-formatting-list-ol,
+    body #editor .CodeMirror .cm-formatting-list-ul,
+    body #editor .popup .search input.regexp {
         font-family: var(--body-font);
     }
     .cm-header {
         font-family: var(--title-font);
     }
-    .CodeMirror, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-comment {
+    .CodeMirror,
+    body #editor .CodeMirror .cm-fenced-code,
+    body #editor .CodeMirror .cm-comment {
         font-family: var(--mono-font);
     }
 

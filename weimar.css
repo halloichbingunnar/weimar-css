@@ -28,7 +28,7 @@
 
 /*Menubar*/
     #menubar {
-       color: var(--grey-4); 
+       color: var(--grey-4);
     }
 
     body.dark #menubar {
@@ -65,7 +65,7 @@
     }
 
     body ::-webkit-scrollbar-thumb {
-        background-color: var(--grey-1) !important;
+        background-color: var(--grey-2) !important;
     }
 
     body.dark ::-webkit-scrollbar-thumb {
@@ -203,7 +203,7 @@
         border-left: 5px solid var(--green-0);
     }
 
-    body.dark #file-list div.container div.list-item.selected, 
+    body.dark #file-list div.container div.list-item.selected,
     body.dark #file-list div.container div.list-item.active {
         background-color: transparent;
     }
@@ -218,13 +218,13 @@
         color: var(--grey-3);
     }
 
-    body #file-list div.list-item.file:hover, 
+    body #file-list div.list-item.file:hover,
     body #file-list div.list-item.code:hover,
     body #file-list div.list-item.directory:hover {
         background-color: var(--grey-1) !important;
     }
 
-    body.dark #file-list div.list-item.file:hover, 
+    body.dark #file-list div.list-item.file:hover,
     body.dark #file-list div.list-item.code:hover,
     body.dark #file-list div.list-item.directory:hover {
         background-color: var(--grey-6) !important;
@@ -277,14 +277,14 @@
     }
 
 
-    #file-tree #directories-dirs-header, 
+    #file-tree #directories-dirs-header,
     #file-tree #directories-files-header {
         height: 26px;
         position: sticky;
         vertical-align: bottom;
     }
 
-    body.dark #file-tree #directories-dirs-header, 
+    body.dark #file-tree #directories-dirs-header,
     body.dark #file-tree #directories-files-header {
         border-bottom-color: var(--grey-7);
         background-color: var(--black);
@@ -292,7 +292,7 @@
     }
 
 
-    body #file-tree #directories-dirs-header, 
+    body #file-tree #directories-dirs-header,
     body #file-tree #directories-files-header {
         border-bottom: 1px solid var(--grey-1);
         color: var(--grey-3);
@@ -301,7 +301,7 @@
         line-height: 25px;
     }
 
-    #file-tree #directories-dirs-header clr-icon, 
+    #file-tree #directories-dirs-header clr-icon,
     #file-tree #directories-files-header clr-icon {
         width: 12px;
         height: 12px;
@@ -445,70 +445,87 @@
 
 
 /* --- Fonts --- */
-body #editor .CodeMirror, body #editor .modal .dialog .code, body #editor .CodeMirror .cm-comment, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-formatting-task, body #editor .CodeMirror .cm-formatting-code-block, body #editor .CodeMirror .cm-formatting-list-ol, body #editor .CodeMirror .cm-formatting-list-ul, body #editor .popup .search input.regexp {
-    font-family: var(--body-font);
-}
-.cm-header {
-    font-family: var(--title-font);
-}
-.CodeMirror, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-comment {
-    font-family: var(--mono-font);
-}
-/* font-size of headings */
-.CodeMirror .size-header-3 {
-    font-size: 1.25em;
-}
-.CodeMirror .size-header-4 {
-    font-size: 1.25em;
-}
-.CodeMirror .size-header-5 {
-    font-size: 1.1em;
-}
-.cm-header.cm-header-4, .cm-header.cm-header-5, .cm-header.cm-header-6 {
-    font-weight: normal;
-}
+    body #editor .CodeMirror, 
+    body #editor .modal .dialog .code,
+    body #editor .CodeMirror .cm-comment,
+    body #editor .CodeMirror .cm-fenced-code,
+    body #editor .CodeMirror .cm-formatting-task,
+    body #editor .CodeMirror .cm-formatting-code-block,
+    body #editor .CodeMirror .cm-formatting-list-ol,
+    body #editor .CodeMirror .cm-formatting-list-ul,
+    body #editor .popup .search input.regexp {
+        font-family: var(--body-font);
+    }
+    .cm-header {
+        font-family: var(--title-font);
+    }
+    .CodeMirror,
+    body #editor .CodeMirror .cm-fenced-code,
+    body #editor .CodeMirror .cm-comment {
+        font-family: var(--mono-font);
+    }
 
-/* make heading hashtags (## h2) smaller */
-.cm-formatting-header {
-    font-size: small;
-    font-family: var(--body-font);    
-}
+    /* font-size of headings */
+    .CodeMirror .size-header-1 {
+        font-size: 2em;
+    }
+    .CodeMirror .size-header-2 {
+        font-size: 1.6em;
+    }
+    .CodeMirror .size-header-3 {
+        font-size: 1.25em;
+    }
+    .CodeMirror .size-header-4 {
+        font-size: 1.25em;
+      }
+    .CodeMirror .size-header-5 {
+        font-size: 1.1em;
+    }
+    .cm-header.cm-header-4, .cm-header.cm-header-5, .cm-header.cm-header-6 {
+        font-weight: normal;
+    }
 
-/* make ** and _ markup less disruptive */
-.CodeMirror .cm-formatting-strong, .CodeMirror .cm-formatting-em, span.cm-formatting.cm-formatting-code.cm-comment.cm-variable-2 {
-    opacity: 0.5;
-    font-weight: normal;
-    letter-spacing: -0.2em;
-}
+    /* make heading hashtags (## h2) smaller */
+    .cm-formatting-header {
+        font-size: small;
+        font-family: var(--body-font);
+    }
 
-/* limit the text column width to a maximum */
-.CodeMirror-sizer {
-    max-width: 800px;
-}
+    /* make ** and _ markup less disruptive */
+    .CodeMirror .cm-formatting-strong, .CodeMirror .cm-formatting-em, span.cm-formatting.cm-formatting-code.cm-comment.cm-variable-2 {
+        opacity: 0.5;
+        font-weight: normal;
+        letter-spacing: -0.2em;
+    }
 
-/* disable color of emphasis/strong */
-body #editor .CodeMirror .cm-em, body #editor .CodeMirror .cm-strong, body.dark #editor .CodeMirror .cm-em, body.dark #editor .CodeMirror .cm-strong{
-    color: inherit;
-}
+    /* limit the text column width to a maximum */
+    .CodeMirror-sizer {
+        max-width: 800px;
+    }
 
-/*Dark mode*/
-body.dark #editor .CodeMirror .code-block-line, 
-body.dark .quicklook .body .CodeMirror .code-block-line, 
-body.dark .dialog .CodeMirror .code-block-line {
-    background-color: var(--grey-7);
-}
+    /* disable color of emphasis/strong*/
+    body #editor .CodeMirror .cm-em, body #editor .CodeMirror .cm-strong, body.dark #editor .CodeMirror .cm-em, body.dark #editor .CodeMirror .cm-strong{
+        color: inherit;
+    }
 
-body.dark #editor .CodeMirror, 
-body.dark .quicklook .body .CodeMirror, 
-body.dark .dialog .CodeMirror {
-    color: var(--grey-2);
-}
+    /*Dark mode*/
+    body.dark #editor .CodeMirror .code-block-line,
+    body.dark .quicklook .body .CodeMirror .code-block-line,
+    body.dark .dialog .CodeMirror .code-block-line {
+        background-color: var(--grey-7);
+    }
 
-body.dark #file-list div.container div.list-item div.meta .id, 
-body.dark #file-list div.container div.list-item div.meta .tags, 
-body.dark #file-list div.container div.list-item div.meta .directories, 
-body.dark #file-list div.container div.list-item div.meta .files, 
-body.dark #file-list div.container div.list-item div.meta .code-indicator {
-    background-color: var(--grey-6);
-    color: var(--grey-3);
-}
+    body.dark #editor .CodeMirror,
+    body.dark .quicklook .body .CodeMirror,
+    body.dark .dialog .CodeMirror {
+        color: var(--grey-2);
+    }
+
+    body.dark #file-list div.container div.list-item div.meta .id,
+    body.dark #file-list div.container div.list-item div.meta .tags,
+    body.dark #file-list div.container div.list-item div.meta .directories,
+    body.dark #file-list div.container div.list-item div.meta .files,
+    body.dark #file-list div.container div.list-item div.meta .code-indicator {
+        background-color: var(--grey-6);
+        color: var(--grey-3);
+    }

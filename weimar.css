@@ -1,34 +1,39 @@
-/* define your body, title and monospace font here*/
-:root {
-    --body-font: 'IBM Plex Sans', sans-serif;
-    --title-font: 'IBM Plex Mono', monospace;
-    --mono-font: 'IBM Plex Mono', monospace;
-   }
+/* define your body, title and monospace font here */
+    :root {
+        --body-font: 'IBM Plex Sans', sans-serif;
+        --title-font: 'IBM Plex Mono', monospace;
+        --mono-font: 'IBM Plex Mono', monospace;
+       }
 
-/* adapt Berlin colors */
-:root {
-    --green-0: #038387;
-    --green-1: #027175;
-    --green-2: #025659;
-}
 
-/* using GitHub Primer greyscale */
-:root {
-    --bg-primary: white;
-    --bg-directories: white;
-    --grey-3: #8b949e;
-    --grey-4: #6e7681;
-    --grey-5: #484f58;
-    --grey-6: #30363d;
-    --grey-7: #21262d;
-    --grey-8: #161b22;
-    --black: #0d1117;
-    --text-white: #f8f8f8;
-}
+/*--- Colors ---*/
 
-/*Menubar*/
+    /* adapt Berlin colors*/
+    :root {
+        --green-0: #038387;
+        --green-1: #027175;
+        --green-2: #025659;
+    }
+
+    /* using GitHub Primer greyscale */
+    :root {
+        --bg-primary: white;
+        --bg-directories: white;
+        --grey-3: #8b949e;
+        --grey-4: #6e7681;
+        --grey-5: #484f58;
+        --grey-6: #30363d;
+        --grey-7: #21262d;
+        --grey-8: #161b22;
+        --black: #0d1117;
+        --text-white: #f8f8f8;
+    }
+
+
+/*--- Menubar ---*/
+
     #menubar {
-       color: var(--grey-4); 
+       color: var(--grey-4);
     }
 
     body.dark #menubar {
@@ -47,7 +52,8 @@
     }
 
 
-/*Menu*/
+/*--- Menu ---*/
+
     body.dark div#application-menu {
         border: 1px solid var(--grey-5);
         background-color: var(--grey-6);
@@ -59,7 +65,8 @@
     }
 
 
-/*Scrollbar*/
+/*--- Scrollbar ---*/
+
     ::-webkit-scrollbar {
         width: 6px;
     }
@@ -72,13 +79,19 @@
         background-color: var(--grey-5) !important;
     }
 
-/*Toolbar*/
+
+/*--- Toolbar ---*/
+
     #toolbar .button clr-icon {
         width: 15px;
     }
 
+    body #toolbar{
+        background-color: white;
+    }
+
     body.dark #toolbar {
-        color: var(--grey-3);
+        color: var(--grey-2);
         background-color: var(--black);
     }
 
@@ -89,7 +102,8 @@
     }
 
 
-/*Menu*/
+/*--- Menu ---*/
+
     body .cb-toggle input:checked + .toggle {
         background-color: var(--green-0);
     }
@@ -114,18 +128,19 @@
     }
 
 
-/* Document tabs */
+/*--- Document tabs ---*/
+
     #document-tabs{
         font-size: 12px;
+        color: var(--grey-4);
     }
 
-    body #document-tabs {
+   body #document-tabs {
         border-bottom: 0px;
-        border-top: 1px solid var(--grey-2);
     }
 
     body #document-tabs .document {
-        background-color: var(--grey-0);
+        border-bottom: 1px solid var(--grey-1);
     }
 
     #document-tabs .document:hover{
@@ -134,7 +149,11 @@
 
     body #document-tabs .document.active {
         background-color: var(--bg-primary);
-        color: var(--grey-21);
+        color: var(--grey-4);
+        border-top: 1px solid var(--grey-1);
+        border-left: 1px solid var(--grey-1);
+        border-right: 1px solid var(--grey-1);
+        border-bottom: 0px;
     }
 
     #document-tabs .document.active:hover{
@@ -147,35 +166,47 @@
     }
 
     /* dark */
+
     body.dark #document-tabs {
-        border-bottom: 1px solid var(--grey-7);
+        border-bottom: 0px;
         color: var(--grey-2);
-        background-color: var(--grey-8);
-        border-top: 0px;
     }
 
     body.dark #document-tabs .document {
-        background-color: var(--grey-8);
+        background-color: var(--black);
+        border-bottom: 1px solid var(--grey-6);
     }
 
     body.dark #document-tabs .document:hover{
-        background-color: var(--grey-7) !important;
+        background-color: var(--grey-6) !important;
     }
 
     body.dark #document-tabs .document.active {
         background-color: var(--grey-7);
+        color: var(--grey-2);
+        border-top: 1px solid var(--grey-6);
+        border-left: 1px solid var(--grey-6);
+        border-right: 1px solid var(--grey-6);
+        border-bottom: 0px;
     }
 
     body.dark #document-tabs .document.active:hover{
-        background-color: var(--grey-6);
+        background-color: var(--grey-5);
     }
 
 
-/*File list*/
-    /* distinguish directory from files */
-    body #file-list div.list-item.directory {
-        font-weight: bold;
+/*--- Resizer ---*/
+
+    #file-manager #file-manager-resize, #file-manager #file-manager-inner-resizer {
+        background-color: transparent;
     }
+
+    body.dark #file-manager #file-manager-resize, body.dark #file-manager #file-manager-inner-resizer {
+        background-color: transparent;
+    }
+
+
+/*--- File list ---*/
 
     body #file-list {
         color: var(--grey-3);
@@ -183,10 +214,27 @@
     }
 
     body.dark #file-list {
-        background-color: var(--grey-8);
+        background-color: var(--black);
         color: var(--grey-3);
         box-shadow: inset -14px 2px 54px -23px rgba(0, 0, 0, 0.75);
     }
+
+    /* directories */
+
+    body #file-list div.list-item.directory {
+        background-color: var(--grey-0);
+        color: var(--grey-3);
+    /*    font-weight: bold;*/
+    }
+
+    body.dark #file-list div.container div.list-item.directory {
+        background-color: var(--grey-7);
+        color: var(--grey-3);
+        border-top: 1px solid var(--grey-6);
+        border-bottom: 1px solid var(--grey-7);
+    }
+
+    /* Files */
 
     body #file-list div.list-item {
         border-bottom: 1px solid var(--grey-0);
@@ -198,47 +246,46 @@
         border-left: 5px solid transparent;
     }
 
+    /* Active file */
+
     body #file-list div.list-item.selected {
-        background-color: var(--bg-primary);
+        background-color: transparent;
         border-left: 5px solid var(--green-0);
     }
 
-    body.dark #file-list div.container div.list-item.selected, 
+    body.dark #file-list div.container div.list-item.selected,
     body.dark #file-list div.container div.list-item.active {
         background-color: transparent;
     }
 
-    body #file-list div.list-item.directory {
-        background-color: var(--grey-0);
-        color: var(--grey-3);
-    }
+    /* Hover */
 
-    body.dark #file-list div.container div.list-item.directory {
-        background-color: var(--grey-7);
-        color: var(--grey-3);
-    }
-
-    body #file-list div.list-item.file:hover, 
+    body #file-list div.list-item.file:hover,
     body #file-list div.list-item.code:hover,
     body #file-list div.list-item.directory:hover {
         background-color: var(--grey-1) !important;
     }
 
-    body.dark #file-list div.list-item.file:hover, 
-    body.dark #file-list div.list-item.code:hover,
-    body.dark #file-list div.list-item.directory:hover {
+    body.dark #file-list div.container div.list-item.file:hover,
+    body.dark #file-list div.container div.list-item.code:hover,
+    body.dark #file-list div.container div.list-item.directory:hover,
+    body.dark #file-list div.container div.list-item.directory .sorter {
         background-color: var(--grey-6) !important;
-        color: var(--grey-3)
+        color: var(--grey-2) !important;
     }
 
-    body.dark #file-list div.container div.list-item div.meta .id, body.dark #file-list div.container div.list-item div.meta .tags, body.dark #file-list div.container div.list-item div.meta .directories, body.dark #file-list div.container div.list-item div.meta .files, body.dark #file-list div.container div.list-item div.meta .code-indicator {
+    body.dark #file-list div.container div.list-item div.meta .id,
+    body.dark #file-list div.container div.list-item div.meta .tags,
+    body.dark #file-list div.container div.list-item div.meta .directories,
+    body.dark #file-list div.container div.list-item div.meta .files,
+    body.dark #file-list div.container div.list-item div.meta .code-indicator {
         background-color: var(--grey-6);
         color: var(--grey-0);
     }
 
-/*Filter*/
+    /*Filter*/
+
     #file-list #file-manager-filter {
-        border-bottom: 1px solid var(--grey-2);
         height: 25px;
         padding-left: 6px;
         background-color: var(--bg-primary);
@@ -246,21 +293,21 @@
         position: sticky;
     }
 
-    body.dark #file-list #file-manager-filter #file-manager-filter-input {
-        color: var(--grey-1);
-        background-color: var(--black);
-    }
-
     body #file-list #file-manager-filter #file-manager-filter-input {
         font-family: inherit;
         transition: 0.5s all ease-in-out;
+        height: 25px;
+        border-bottom: 1px solid var(--grey-1);
     }
 
-    #file-manager #file-manager-resize, #file-manager #file-manager-inner-resizer {
-        background-color: var(--grey-0);
+    body.dark #file-list #file-manager-filter #file-manager-filter-input {
+        color: var(--grey-1);
+        background-color: var(--black);
+        border-bottom: 1px solid var(--grey-6);
     }
 
-/*File tree*/
+
+/*--- File tree ---*/
 
     body #file-tree {
         background-color: transparent;
@@ -276,32 +323,30 @@
         box-shadow: inset -14px 2px 54px -23px rgba(0, 0, 0, 0.25);
     }
 
-
-    #file-tree #directories-dirs-header, 
+    #file-tree #directories-dirs-header,
     #file-tree #directories-files-header {
         height: 26px;
         position: sticky;
         vertical-align: bottom;
     }
 
-    body.dark #file-tree #directories-dirs-header, 
-    body.dark #file-tree #directories-files-header {
-        border-bottom-color: var(--grey-7);
-        background-color: var(--black);
-        color: var(--grey-4);
-    }
-
-
-    body #file-tree #directories-dirs-header, 
+    body #file-tree #directories-dirs-header,
     body #file-tree #directories-files-header {
         border-bottom: 1px solid var(--grey-1);
-        color: var(--grey-3);
+        color: var(--grey-1);
         background-color: var(--bg-primary);
         font-size: 12px;
         line-height: 25px;
     }
 
-    #file-tree #directories-dirs-header clr-icon, 
+    body.dark #file-tree #directories-dirs-header,
+    body.dark #file-tree #directories-files-header {
+        border-bottom-color: var(--grey-6);
+        background-color: var(--black);
+        color: var(--grey-4);
+    }
+
+    #file-tree #directories-dirs-header clr-icon,
     #file-tree #directories-files-header clr-icon {
         width: 12px;
         height: 12px;
@@ -311,12 +356,23 @@
     }
 
     body.dark #file-tree div.list-item:hover {
-        color: var(--grey-3);
-        background-color: var(--grey-7);
+        color: var(--grey-2);
+        background-color: var(--grey-6);
+    }
+
+    body #file-tree div.list-item.selected:hover {
+        background-color: var(--c-primary-shade);
+        color: var(--text-white);
+    }
+
+    body.dark #file-tree div.list-item.selected:hover {
+        background-color: var(--c-primary);
+        color: var(--text-white);
     }
 
 
-/*CodeMirror*/
+/*--- CodeMirror ---*/
+
     #editor .CodeMirror {
         height: calc(100% - 25px);
         margin-top: 25px;
@@ -334,7 +390,9 @@
         background-color: var(--grey-7);
     }
 
-/*Sidebar*/
+
+/*--- Sidebar ---*/
+
     #sidebar {
         width: 15%;
     }
@@ -351,19 +409,9 @@
         background-color: transparent;
     }
 
-    body.dark #sidebar {
-        background-color: transparent;
-        color: var(--grey-3);
-    }
-
     body #sidebar #sidebar-tabs .sidebar-tab.active {
         background-color: var(--grey-1);
         color: var(--black);
-    }
-
-    body.dark #sidebar #sidebar-tabs .sidebar-tab.active {
-        background-color: var(--grey-7);
-        color: var(--grey-3);
     }
 
     body #sidebar #sidebar-tabs .sidebar-tab:hover {
@@ -371,11 +419,25 @@
         color: var(--black);
     }
 
-    body.dark #sidebar #sidebar-tabs .sidebar-tab:hover {
-        background-color: var(--grey-6);
+    /* Dark */
+
+    body.dark #sidebar {
+        background-color: transparent;
+        color: var(--grey-3);
     }
 
-/*Sidebar Text*/
+    body.dark #sidebar #sidebar-tabs .sidebar-tab.active {
+        background-color: var(--grey-6);
+        color: var(--grey-3);
+    }
+
+    body.dark #sidebar #sidebar-tabs .sidebar-tab:hover {
+        background-color: var(--grey-5);
+        color: var(--grey-3);
+    }
+
+    /*Sidebar Text*/
+
     #sidebar h1 {
         padding: 10px;
         padding-left: 18px;
@@ -388,7 +450,8 @@
         font-size: 0.8em;
     }
 
-/*Sidebar Attachments*/
+    /*Sidebar Attachments*/
+
     #sidebar a.attachment {
         display: block;
         margin: 10px;
@@ -413,7 +476,7 @@
         transition: 0.2s background-color ease;
     }
 
-/*Sidebar Literature*/
+    /*Sidebar Literature*/
 
     #sidebar div.csl-bib-body div.csl-entry {
         display: list-item;
@@ -429,7 +492,7 @@
         font-weight: normal;
     }
 
-/*Sidebar Content*/
+    /*Sidebar Content*/
 
     body #sidebar div.toc-entry-container div.toc-level {
         padding: 0px 10px;
@@ -445,70 +508,78 @@
 
 
 /* --- Fonts --- */
-body #editor .CodeMirror, body #editor .modal .dialog .code, body #editor .CodeMirror .cm-comment, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-formatting-task, body #editor .CodeMirror .cm-formatting-code-block, body #editor .CodeMirror .cm-formatting-list-ol, body #editor .CodeMirror .cm-formatting-list-ul, body #editor .popup .search input.regexp {
-    font-family: var(--body-font);
-}
-.cm-header {
-    font-family: var(--title-font);
-}
-.CodeMirror, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-comment {
-    font-family: var(--mono-font);
-}
-/* font-size of headings */
-.CodeMirror .size-header-3 {
-    font-size: 1.25em;
-}
-.CodeMirror .size-header-4 {
-    font-size: 1.25em;
-}
-.CodeMirror .size-header-5 {
-    font-size: 1.1em;
-}
-.cm-header.cm-header-4, .cm-header.cm-header-5, .cm-header.cm-header-6 {
-    font-weight: normal;
-}
 
-/* make heading hashtags (## h2) smaller */
-.cm-formatting-header {
-    font-size: small;
-    font-family: var(--body-font);    
-}
+    body #editor .CodeMirror, body #editor .modal .dialog .code, body #editor .CodeMirror .cm-comment, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-formatting-task, body #editor .CodeMirror .cm-formatting-code-block, body #editor .CodeMirror .cm-formatting-list-ol, body #editor .CodeMirror .cm-formatting-list-ul, body #editor .popup .search input.regexp {
+        font-family: var(--body-font);
+    }
+    .cm-header {
+        font-family: var(--title-font);
+    }
+    .CodeMirror, body #editor .CodeMirror .cm-fenced-code, body #editor .CodeMirror .cm-comment {
+        font-family: var(--mono-font);
+    }
 
-/* make ** and _ markup less disruptive */
-.CodeMirror .cm-formatting-strong, .CodeMirror .cm-formatting-em, span.cm-formatting.cm-formatting-code.cm-comment.cm-variable-2 {
-    opacity: 0.5;
-    font-weight: normal;
-    letter-spacing: -0.2em;
-}
+    /* font-size of headings */
+    .CodeMirror .size-header-1 {
+        font-size: 2em;
+    }
+    .CodeMirror .size-header-2 {
+        font-size: 1.6em;
+    }
+    .CodeMirror .size-header-3 {
+        font-size: 1.25em;
+    }
+    .CodeMirror .size-header-4 {
+        font-size: 1.25em;
+      }
+    .CodeMirror .size-header-5 {
+        font-size: 1.1em;
+    }
+    .cm-header.cm-header-4, .cm-header.cm-header-5, .cm-header.cm-header-6 {
+        font-weight: normal;
+    }
 
-/* limit the text column width to a maximum */
-.CodeMirror-sizer {
-    max-width: 800px;
-}
+    /* make heading hashtags (## h2) smaller */
+    .cm-formatting-header {
+        font-size: small;
+        font-family: var(--body-font);
+    }
 
-/* disable color of emphasis/strong */
-body #editor .CodeMirror .cm-em, body #editor .CodeMirror .cm-strong, body.dark #editor .CodeMirror .cm-em, body.dark #editor .CodeMirror .cm-strong{
-    color: inherit;
-}
+    /* make ** and _ markup less disruptive */
+    .CodeMirror .cm-formatting-strong, .CodeMirror .cm-formatting-em, span.cm-formatting.cm-formatting-code.cm-comment.cm-variable-2 {
+        opacity: 0.5;
+        font-weight: normal;
+        letter-spacing: -0.2em;
+    }
 
-/*Dark mode*/
-body.dark #editor .CodeMirror .code-block-line, 
-body.dark .quicklook .body .CodeMirror .code-block-line, 
-body.dark .dialog .CodeMirror .code-block-line {
-    background-color: var(--grey-7);
-}
+    /* limit the text column width to a maximum */
+    .CodeMirror-sizer {
+        max-width: 800px;
+    }
 
-body.dark #editor .CodeMirror, 
-body.dark .quicklook .body .CodeMirror, 
-body.dark .dialog .CodeMirror {
-    color: var(--grey-2);
-}
+    /* disable color of emphasis/strong*/
+    body #editor .CodeMirror .cm-em, body #editor .CodeMirror .cm-strong, body.dark #editor .CodeMirror .cm-em, body.dark #editor .CodeMirror .cm-strong{
+        color: inherit;
+    }
 
-body.dark #file-list div.container div.list-item div.meta .id, 
-body.dark #file-list div.container div.list-item div.meta .tags, 
-body.dark #file-list div.container div.list-item div.meta .directories, 
-body.dark #file-list div.container div.list-item div.meta .files, 
-body.dark #file-list div.container div.list-item div.meta .code-indicator {
-    background-color: var(--grey-6);
-    color: var(--grey-3);
-}
+    /*Dark mode*/
+    body.dark #editor .CodeMirror .code-block-line,
+    body.dark .quicklook .body .CodeMirror .code-block-line,
+    body.dark .dialog .CodeMirror .code-block-line {
+        background-color: var(--grey-7);
+    }
+
+    body.dark #editor .CodeMirror,
+    body.dark .quicklook .body .CodeMirror,
+    body.dark .dialog .CodeMirror {
+        color: var(--grey-2);
+    }
+
+    body.dark #file-list div.container div.list-item div.meta .id,
+    body.dark #file-list div.container div.list-item div.meta .tags,
+    body.dark #file-list div.container div.list-item div.meta .directories,
+    body.dark #file-list div.container div.list-item div.meta .files,
+    body.dark #file-list div.container div.list-item div.meta .code-indicator {
+        background-color: var(--grey-6);
+        color: var(--grey-3);
+    }

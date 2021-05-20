@@ -19,6 +19,7 @@
     :root {
         --bg-primary: white;
         --bg-directories: white;
+        --grey-1-5: #d1d5da;
         --grey-3: #8b949e;
         --grey-4: #6e7681;
         --grey-5: #484f58;
@@ -72,7 +73,7 @@
     }
 
     body ::-webkit-scrollbar-thumb {
-        background-color: var(--grey-1) !important;
+        background-color: var(--grey-1-5) !important;
     }
 
     body.dark ::-webkit-scrollbar-thumb {
@@ -90,6 +91,10 @@
         background-color: white;
     }
 
+    body #toolbar .searchbar input {
+        border: 1px solid var(--grey-1)
+    }
+
     body.dark #toolbar {
         color: var(--grey-2);
         background-color: var(--black);
@@ -98,7 +103,7 @@
     body.dark #toolbar .searchbar input {
         color: inherit;
         background-color: var(--black);
-        border: transparent;
+        border: 1px solid var(--grey-6)
     }
 
 
@@ -297,13 +302,13 @@
         font-family: inherit;
         transition: 0.5s all ease-in-out;
         height: 25px;
-        border-bottom: 1px solid var(--grey-1);
+        border: 1px solid var(--grey-1);
     }
 
     body.dark #file-list #file-manager-filter #file-manager-filter-input {
         color: var(--grey-1);
         background-color: var(--black);
-        border-bottom: 1px solid var(--grey-6);
+        border: 1px solid var(--grey-6);
     }
 
 
